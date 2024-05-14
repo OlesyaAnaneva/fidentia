@@ -1,0 +1,129 @@
+.admin-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+}
+
+.admin-container-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+.admin-content-ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-content-li {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.admin-content-li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.admin-content-title,
+.admin-content-description,
+.admin-content-timestamp,
+.admin-content-link {
+    flex: 1;
+}
+
+.admin-content-edit-button,
+.admin-content-delete-button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-content-edit-button:hover,
+.admin-content-delete-button:hover {
+    background-color: #0056b3;
+}
+
+.admin-content-edit-container {
+    margin-top: 20px;
+}
+
+.admin-content-edit-container-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.admin-content-edit-container-input,
+.admin-content-edit-container-textarea,
+.admin-content-edit-container-input2 {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.admin-content-edit-container-button-save,
+.admin-content-edit-container-return-button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-content-edit-container-button-save:hover,
+.admin-content-edit-container-return-button:hover {
+    background-color: #218838;
+}
+
+.admin-content-add-container-title,
+.admin-content-add-container-textarea,
+.admin-content-add-container-input,
+.admin-content-add-container-input2 {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.admin-content-add-container-add-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.admin-content-add-container-add-button:hover {
+    background-color: #218838;
+}
+
+.admin-content-p{
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}

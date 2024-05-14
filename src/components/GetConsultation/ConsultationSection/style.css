@@ -1,0 +1,87 @@
+.consultation-common-container {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: flex-start;
+	min-width: 1440px;
+	padding: 48px 48px 48px 118px;
+	background: rgba(243, 244, 245, 1);
+}
+.consultation-section {
+	box-sizing: border-box;
+	flex: 0 0 auto;
+	width: 30%;
+	padding-bottom: 163px;
+}
+.consultation-headline-text-style {
+	font: 600 24px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
+	white-space: pre-wrap;
+}
+.consultation-text {
+	margin-top: 16px;
+	font: 400 16px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
+	text-align: left;
+	white-space: pre-wrap;
+}
+.consultation-social-media-text {
+	margin-top: 24px;
+	font: 400 16px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
+	white-space: pre-wrap;
+}
+.consultation-form-container {
+	box-sizing: border-box;
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	gap: 23.5px;
+	align-items: stretch;
+	justify-content: flex-start;
+	padding-left: 15px;
+}
+.consultation-center-aligned-contact-info-container {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+.consultation-submit-button-style {
+	box-sizing: border-box;
+	display: block;
+	flex: 0 0 auto;
+	min-width: 440px;
+	height: 51px;
+	font: 400 16px Inter, sans-serif;
+	color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+	background: rgba(40, 48, 56, 1);
+	border: none;
+	border-radius: 8px;
+}
+
+.consultation-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.consultation-modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+}
+.consultation-modal-overlay.hidden {
+  display: none;
+}

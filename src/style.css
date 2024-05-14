@@ -1,0 +1,9 @@
+.about-global-div {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: flex-start;
+	/* min-width: 1440px; */
+	background: rgba(243, 244, 245, 1);
+}

@@ -1,0 +1,124 @@
+.contacts-office-card {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1.4375rem;
+  margin-top: 1.46875rem;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 1.5rem;
+}
+.contacts-info-container {
+  flex: 0 0 auto;
+  padding-top: 1.5rem;
+}
+.contacts-info-data-container {
+  box-sizing: border-box;
+  width: 100%;
+}
+.contacts-office-address-details {
+  font: 400 16px/22.5px Inter, sans-serif;
+  color: rgba(51, 63, 72, 1);
+  text-align: left;
+  white-space: pre-wrap;
+}
+.contacts-address-details-text-style-header {
+  font: 400 16px/22.5px Inter, sans-serif;
+  color: rgba(51, 63, 72, 1);
+  text-align: left;
+}
+.contacts-address-details-text-style {
+  font: 400 16px/22.5px Inter, sans-serif;
+  text-align: left;
+}
+.contacts-postal-details-style {
+  margin-top: 0.96875rem;
+  font: 400 16px/22.5px Inter, sans-serif;
+  color: rgba(51, 63, 72, 1);
+  text-align: left;
+  white-space: pre-wrap;
+}
+.chairman-info-text-style {
+  margin-top: 0.96875rem;
+  font: 400 14px/19.5px Inter, sans-serif;
+  color: rgba(0, 0, 0, 1);
+  text-align: left;
+  white-space: pre-wrap;
+  opacity: 0.7;
+}
+.contacts-buttons-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 2.5625rem;
+}
+.contacts-button-with-icon {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 0.5625rem;
+  align-items: center;
+  justify-content: center;
+  width: 13.375rem;
+  min-width: 13.375rem;
+  height: 3.25rem;
+  font: 400 16px Inter, sans-serif;
+  color: rgba(40, 48, 56, 1);
+  cursor: pointer;
+  background: rgba(243, 244, 245, 1);
+  border: none;
+  border-radius: 0.5rem;
+}
+.contacts-svg-container {
+  display: flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: rgba(40, 48, 56, 1);
+}
+.contacts-button {
+  box-sizing: border-box;
+  display: block;
+  flex: 0 0 auto;
+  width: 12.6875rem;
+  min-width: 12.6875rem;
+  height: 3.1875rem;
+  margin-left: 1.03125rem;
+  font: 400 16px Inter, sans-serif;
+  color: rgba(40, 48, 56, 1);
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(217, 220, 226, 1);
+  border-radius: 0.5rem;
+}
+.contacts-location-image-section {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: initial;
+  height: 29.1875rem;
+  padding-right: 16.125rem;
+  padding-left: 16.125rem;
+  background: url("/assets/div_1gatld4_1af7a5.png") no-repeat 50% / cover;
+  border: none;
+  border-radius: 0px 24px 24px 0px;
+}
+.contacts-location-image-section-box {
+  box-sizing: border-box;
+  width: 4.75rem;
+  padding-top: 20.75rem;
+  padding-bottom: 3.75rem;
+}
+.contacts-image-container {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  max-width: initial;
+  height: 4.75rem;
+}

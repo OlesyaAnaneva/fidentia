@@ -1,0 +1,88 @@
+.about-block-container {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 592px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 24.5px 23.5px 24px;
+  margin-left: 0.9375rem;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 1.5rem;
+}
+.trend-watch-container {
+  flex: 0 0 auto;
+}
+.headline-text-style {
+  font: 600 24px Inter, sans-serif;
+  color: rgba(40, 48, 56, 1);
+  white-space: pre-wrap;
+}
+.expert-insights-paragraph {
+  margin-top: 1rem;
+  font: 400 16px/22.5px Inter, sans-serif;
+  color: rgba(40, 48, 56, 1);
+  text-align: left;
+  white-space: pre-wrap;
+}
+.expert-section {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 2.5rem;
+}
+.expert-gallery {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.circular-image-container {
+  box-sizing: border-box;
+  display: block;
+  width: 5.9375rem;
+  max-width: initial;
+  height: 5.9375rem;
+  clip-path: undefined;
+  border: none;
+  border-radius: 50%;
+  mix-blend-mode: normal;
+  object-fit: cover;
+}
+.circular-image-avatar {
+  box-sizing: border-box;
+  display: block;
+  width: 5.9375rem;
+  max-width: initial;
+  height: 5.9375rem;
+  margin-left: -1rem;
+  clip-path: undefined;
+  border: none;
+  border-radius: 50%;
+  mix-blend-mode: normal;
+  object-fit: cover;
+}
+.mystical-avatar {
+  box-sizing: border-box;
+  display: block;
+  width: 5.9375rem;
+  max-width: initial;
+  height: 5.9375rem;
+  margin-left: -1.125rem;
+  clip-path: path(
+    "M94.5986,47.2993c0,26.1227 -21.1766,47.2993 -47.2993,47.2993c-26.1227,0 -47.2993,-21.1766 -47.2993,-47.2993c0,-26.1227 21.1766,-47.2993 47.2993,-47.2993c26.1227,0 47.2993,21.1766 47.2993,47.2993z"
+  );
+  mix-blend-mode: normal;
+  object-fit: cover;
+}
+.expert-count-text-style {
+  flex: 0 0 auto;
+  margin-left: 1.40625rem;
+  font: 400 16px/22.5px Inter, sans-serif;
+  color: rgba(40, 48, 56, 1);
+  text-align: left;
+  white-space: pre-wrap;
+}

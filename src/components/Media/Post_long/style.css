@@ -1,0 +1,109 @@
+.post-long-container {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	/* min-width: 75rem; */
+	padding: 16px 16px 15.5px;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 1.5rem;
+	transition: height 0.3s ease-in-out;
+}
+.post-long-container.expanded {
+	height: auto;
+}
+.post-long-image-container {
+	box-sizing: border-box;
+	display: block;
+	width: 22.125rem;
+	max-width: initial;
+	height: 13.125rem;
+	clip-path: undefined;
+	border: none;
+	border-radius: 0.5rem;
+	mix-blend-mode: normal;
+	object-fit: cover;
+	transition: transform 0.3s ease-in-out;
+}
+.post-long-image-container:hover {
+	transform: scale(1.2);
+}
+.post-long-info-container {
+	box-sizing: border-box;
+	flex: 0 1 auto;
+	max-width: 47rem;
+	margin-left: 1.4375rem;
+}
+.post-long-info-section {
+	box-sizing: border-box;
+	width: 100%;
+}
+.post-long-info-date-text-style {
+	font: 400 14px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
+	white-space: pre-wrap;
+	opacity: 0.8;
+}
+.post-long-info-title-style {
+	margin-top: 0.5rem;
+	font: 600 18px/21.5px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
+	white-space: pre-wrap;
+}
+.post-long-info-block-text-style {
+	box-sizing: border-box;
+	display: -webkit-box;
+	width: 100%;
+	margin-top: 1rem;
+	overflow: hidden;
+	font: 400 16px/23px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
+	text-align: left;
+	white-space: pre-wrap;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	transition: -webkit-line-clamp 0.3s ease-in-out;
+}
+.post-long-info-block-text-style.expanded {
+	-webkit-line-clamp: unset;
+}
+
+.post-long-read-more-button-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	padding-right: 0.1875rem;
+	padding-left: 0.1875rem;
+	margin-top: 3.875rem;
+}
+.post-long-read-more-btn {
+	flex: 0 0 auto;
+	font: 400 16px/19px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
+	white-space: pre-wrap;
+}
+.post-long-hide-btn {
+	flex: 0 0 auto;
+	font: 400 16px/19px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
+	white-space: pre-wrap;
+	cursor: pointer;
+	margin-top: 1rem;
+}
+.post-long-read-more-btn:hover {
+	color: #c58761;
+}
+.post-long-read-more-button-container,
+.post-long-read-more-btn {
+	cursor: pointer;
+}
+.post-long-read-more-btn::after {
+	content: ' \27F6';
+	font-size: larger;
+}
+.post-long-hide-btn:hover {
+	color: #c58761;
+}

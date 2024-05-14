@@ -1,0 +1,17 @@
+.contact-info-section {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+	min-width: 75.0625rem;
+	padding: 72px 119px;
+	background: rgba(243, 244, 245, 1);
+	min-width: 1440px;
+}
+.contact-title {
+	flex: 0 0 auto;
+	font: 600 32px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
+	white-space: pre-wrap;
+}

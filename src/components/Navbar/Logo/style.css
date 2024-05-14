@@ -1,0 +1,40 @@
+.navbar-section {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.navbar-logo {
+  box-sizing: border-box;
+  display: block;
+  width: 3.813rem; /* 61px / 16px = 3.813rem */
+  max-width: initial;
+  height: 3.813rem; /* 61px / 16px = 3.813rem */
+}
+
+.navbar-info {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 0.688rem; /* 11px / 16px = 0.688rem */
+}
+
+.navbar-heading {
+  flex: 0 0 auto;
+  font: 700 2.625rem Cormorant, serif; /* 42px / 16px = 2.625rem */
+  color: rgba(91, 91, 91, 1);
+  letter-spacing: 0.13rem; /* 2.08px / 16px = 0.13rem */
+  white-space: pre-wrap;
+}
+
+.navbar-paragraph {
+  flex: 0 0 auto;
+  margin-top: -0.063rem; /* -1px / 16px = -0.063rem */
+  font: 500 0.781rem/0.781rem Cormorant, serif; /* 12.5px / 16px = 0.781rem */
+  color: rgba(91, 91, 91, 1);
+  white-space: pre-wrap;
+}

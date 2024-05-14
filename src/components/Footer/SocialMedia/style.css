@@ -1,0 +1,53 @@
+.social-media-container {
+	box-sizing: border-box;
+	flex: 0 0 auto;
+	width: 12.75rem;
+}
+.social-media-text {
+	margin-top: 1.53125rem;
+	font: 400 16px Inter, sans-serif;
+	color: rgba(255, 255, 255, 1);
+	white-space: pre-wrap;
+	opacity: 0.7;
+}
+.social-media-links-container {
+	box-sizing: border-box;
+	display: flex;
+	gap: 0.5rem;
+	align-items: stretch;
+	justify-content: flex-start;
+	height: 2.5625rem;
+	margin-top: 0.484375rem;
+}
+.social-media-card-container {
+	box-sizing: border-box;
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-right: 0.53125rem;
+	padding-left: 0.5rem;
+	background: rgba(237, 238, 239, 1);
+	border-radius: 0.328125rem;
+}
+.social-media-svg-container {
+	display: flex;
+	flex: 0 0 auto;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.social-media-contact-button {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	min-width: 12.6875rem;
+	height: 3.1875rem;
+	margin-top: 1rem;
+	font: 400 16px Inter, sans-serif;
+	color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+	background: transparent;
+	border: 1px solid rgba(217, 220, 226, 1);
+	border-radius: 0.5rem;
+}

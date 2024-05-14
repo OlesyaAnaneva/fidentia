@@ -1,0 +1,44 @@
+.consultation-phone-container{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 0.875rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem;
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(217, 220, 226, 1);
+  border-radius: 0.5rem;
+  
+  width: 28.5rem;
+}
+
+.consultation-phone-number-prefix {
+  flex: 0 0 auto;
+  padding-top: 1rem;
+  font: 400 16px Inter, sans-serif;
+  color: rgba(40, 48, 56, 1);
+  white-space: pre-wrap;
+}
+
+.consultation-phone-vertical-divider {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  align-self: center;
+  width: 0.0625rem;
+  height: 3.1875rem;
+  border-left: 1px solid #d9dce2;
+}
+
+.consultation-phone-input {
+  box-sizing: border-box;
+  flex: 1;
+  padding-top: 1rem;
+  font: 400 16px Inter, sans-serif;
+  color: rgba(40, 48, 56, 1);
+  background: transparent;
+  border: none;
+  outline: none;
+}

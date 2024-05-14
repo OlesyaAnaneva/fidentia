@@ -1,0 +1,32 @@
+.main-image-container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 90rem;
+  background: url("/assets/div_vqu4oe_206375.png") no-repeat 50% / cover;
+  border: none;
+}
+.main-image-heading {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  max-width: 64.1875rem;
+  margin-right: -19.9375rem;
+  font: 500 64px/83px FoglihtenNo06;
+  color: rgba(40, 48, 56, 1);
+  text-align: left;
+  letter-spacing: 0.2rem;
+  white-space: pre-wrap;
+}
+.main-image {
+  box-sizing: border-box;
+  display: block;
+  width: 38.5625rem;
+  max-width: initial;
+  height: 43.75rem;
+  clip-path: undefined;
+  border: none;
+  mix-blend-mode: normal;
+  object-fit: cover;
+}

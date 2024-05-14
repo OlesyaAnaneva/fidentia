@@ -1,0 +1,20 @@
+{
+	"name": "project",
+	"version": "1.0.0",
+	"description": "Проект с использованием Node.js и React для интерфейса администратора",
+	"main": "server/server.js",
+	"scripts": {
+		"start": "node server/server.js",
+		"client": "cd client && npm start",
+		"server": "cd server && npm start",
+		"dev": "concurrently \"npm run client\" \"npm run server\""
+	},
+	"author": "Ваше имя",
+	"license": "MIT",
+	"dependencies": {
+		"axios": "^1.6.8",
+		"concurrently": "^6.2.1",
+		"express": "^4.17.1",
+		"multer": "^1.4.3"
+	}
+}
