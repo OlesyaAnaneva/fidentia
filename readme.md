@@ -23,4 +23,8 @@ http://localhost:3000
 
 
 
+админка постов
+http://localhost:3000/admin/posts
 
+админка видео
+http://localhost:3000/admin/videos
