@@ -13,6 +13,7 @@ const Navbar = ({
 			<div className='navbar-header'>
 				<NavLogo />
 				<NavSections
+					className='navbar-sections'
 					onContactUsClick={onContactUsClick}
 					onContactsClick={onContactsClick}
 					onAboutClick={onAboutClick}

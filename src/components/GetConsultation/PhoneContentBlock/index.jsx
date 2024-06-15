@@ -6,12 +6,12 @@ function PhoneContentBlock() {
 
 	const handleChange = (event) => {
 		const input = event.target.value.replace(/\D/g, '');
-		const formattedNumber = formatPhoneNumber(input); 
+		const formattedNumber = formatPhoneNumber(input);
 		setPhoneNumber(formattedNumber);
 	};
 
 	const formatPhoneNumber = (input) => {
-		if (!input) return ''; 
+		if (!input) return '';
 
 		let formattedNumber = '';
 		const countryCode = input.slice(0, 3);
@@ -46,4 +46,3 @@ function PhoneContentBlock() {
 }
 
 export default PhoneContentBlock;
-

@@ -11,7 +11,6 @@ function ConsultationSection() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const handleFormSubmit = () => {
-		// Дополнительная логика, которая должна выполняться при отправке формы
 		setIsModalOpen(true);
 	};
 
@@ -43,8 +42,15 @@ function ConsultationSection() {
 				className={`consultation-modal-overlay ${isModalOpen ? '' : 'hidden'}`}
 				onClick={handleCloseModal}>
 				<div className='consultation-modal-content'>
-					<p>Модальное окно</p>
-					<Button onClick={handleCloseModal}>Закрыть</Button>
+					<p className='consultation-modal-text'>Ваша заявка принята.</p>
+					<p className='consultation-modal-text'>
+						Мы с Вами свяжемся в ближайшее время.
+					</p>
+					<Button
+						className='consultation-submit-button-style'
+						onClick={handleCloseModal}>
+						Закрыть
+					</Button>
 				</div>
 			</div>
 		</div>

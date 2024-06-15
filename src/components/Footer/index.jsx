@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import './style.css';
 import messages from './messages.json';
 import SocialMedia from './SocialMedia';
@@ -15,11 +13,11 @@ function Footer() {
 			.querySelector('.about-container')
 			.scrollIntoView({ behavior: 'smooth' });
 	};
-		const scrollToContacts = () => {
-			document
-				.querySelector('.contact-info-section')
-				.scrollIntoView({ behavior: 'smooth' });
-		};
+	const scrollToContacts = () => {
+		document
+			.querySelector('.contact-info-section')
+			.scrollIntoView({ behavior: 'smooth' });
+	};
 
 	return (
 		<div className='footer-container'>
@@ -42,10 +40,6 @@ function Footer() {
 					<span className='footer-nav-item' onClick={scrollToMedia}>
 						Новости
 					</span>
-					<span className='footer-nav-item' onClick={scrollToMedia}>
-						Медиа
-					</span>
-					<span className='footer-nav-item'>Документы</span>
 					<span className='footer-nav-item' onClick={scrollToContacts}>
 						Контакты
 					</span>

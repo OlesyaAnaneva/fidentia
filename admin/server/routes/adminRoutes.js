@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 		cb(
 			null,
 			file.fieldname + '-' + Date.now() + path.extname(file.originalname)
-		); // Генерируем уникальное имя файла
+		);
 	},
 });
 
@@ -48,10 +48,9 @@ router.post('/add-posts', async (req, res) => {
 			title,
 			description,
 			imageLink,
-			// imageLink: `/data${imageLink}`,
-			timestamp,
+			timestamp: timestamp || new Date().toISOString().slice(0, 10),
 		};
-		posts.push(newPost);
+		posts.unshift(newPost);
 		await fs.writeFile(postsFilePath, JSON.stringify(posts, null, 2));
 		res.send('Пост успешно добавлен');
 	} catch (error) {
@@ -72,17 +71,6 @@ router.post('/edit-posts', async (req, res) => {
 		}
 
 		const index = posts.findIndex((post) => post.id === parseInt(id));
-		// let oldImagePath = postToEdit.imageLink;
-
-		// if (oldImagePath && imageLink) {
-		// 	// Удаляем старое изображение
-		// 	try {
-		// 		await fs.unlink(path.join(__dirname, '..', oldImagePath));
-		// 		console.log('Старое изображение успешно удалено:', oldImagePath);
-		// 	} catch (error) {
-		// 		console.error('Ошибка при удалении старого изображения:', error);
-		// 	}
-		// }
 
 		posts[index] = {
 			...posts[index],
@@ -144,13 +132,11 @@ router.get('/videos', async (req, res) => {
 
 router.post('/add-videos', async (req, res) => {
 	try {
-		const { description, videoLink, timestamp } = req.body;
+		const { videoLink } = req.body;
 		const videos = JSON.parse(await fs.readFile(videosFilePath));
 		const newVideo = {
 			id: videos.length + 1,
-			description,
 			videoLink,
-			timestamp,
 		};
 		videos.push(newVideo);
 		await fs.writeFile(videosFilePath, JSON.stringify(videos, null, 2));
@@ -163,7 +149,7 @@ router.post('/add-videos', async (req, res) => {
 
 router.post('/edit-videos', async (req, res) => {
 	try {
-		const { id, description, videoLink, timestamp } = req.body;
+		const { id, videoLink } = req.body;
 		const videos = JSON.parse(await fs.readFile(videosFilePath));
 		const videoToEdit = videos.find((video) => video.id === parseInt(id));
 
@@ -175,9 +161,7 @@ router.post('/edit-videos', async (req, res) => {
 
 		videos[index] = {
 			...videos[index],
-			description,
 			videoLink,
-			timestamp,
 		};
 		await fs.writeFile(videosFilePath, JSON.stringify(videos, null, 2));
 		res.send('Видео успешно изменено');

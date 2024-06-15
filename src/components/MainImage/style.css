@@ -1,32 +1,87 @@
+@font-face {
+	font-family: 'FoglihtenNo06';
+	src: url('./FoglihtenNo06_076.otf') format('opentype');
+	font-weight: lighter;
+	font-style: normal;
+}
 .main-image-container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  min-width: 90rem;
-  background: url("/assets/div_vqu4oe_206375.png") no-repeat 50% / cover;
-  border: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background: url('/assets/div_vqu4oe_206375.png');
+	background-position: 50% 50%, top right;
+	background-size: cover;
+	border: none;
+	position: relative;
+	height: 60vh;
 }
 .main-image-heading {
-  box-sizing: border-box;
-  flex: 0 1 auto;
-  max-width: 64.1875rem;
-  margin-right: -19.9375rem;
-  font: 500 64px/83px FoglihtenNo06;
-  color: rgba(40, 48, 56, 1);
-  text-align: left;
-  letter-spacing: 0.2rem;
-  white-space: pre-wrap;
+	box-sizing: border-box;
+	margin: 0;
+	font: 500 24px/32px 'FoglihtenNo06';
+	color: #283038;
+	letter-spacing: 0.05em;
+	white-space: pre-wrap;
+	max-width: 90%;
+	margin-bottom: 1rem;
+	text-align: center;
+	padding: 0 1rem;
+	z-index: 2;
 }
 .main-image {
-  box-sizing: border-box;
-  display: block;
-  width: 38.5625rem;
-  max-width: initial;
-  height: 43.75rem;
-  clip-path: undefined;
-  border: none;
-  mix-blend-mode: normal;
-  object-fit: cover;
+	box-sizing: border-box;
+	width: auto;
+	height: 60%;
+	bottom: 35%;
+	border: none;
+	object-fit: cover;
+	position: absolute;
+	left: 85%;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+
+@media (max-width: 768px) {
+	.main-image {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+	.main-image-container {
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		padding: 0;
+	}
+	.main-image {
+		display: none;
+	}
+}
+
+@media (min-width: 1110px) {
+	.main-image-container {
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+		padding: 0;
+		height: auto;
+	}
+	.main-image-heading {
+		max-width: 64.1875rem;
+		margin-right: -19.9375rem;
+		font-size: 64px;
+		line-height: 83px;
+		letter-spacing: 0.2rem;
+		padding: 0;
+	}
+	.main-image {
+		max-width: initial;
+		width: 38.5625rem;
+		height: 43.75rem;
+		position: static;
+		transform: none;
+	}
 }

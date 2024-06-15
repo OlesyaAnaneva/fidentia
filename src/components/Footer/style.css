@@ -4,8 +4,7 @@
 	flex-direction: row;
 	align-items: stretch;
 	justify-content: flex-start;
-	min-width: 90rem;
-	padding: 38px 119px 43px;
+	padding: 2rem 5rem;
 	background: rgba(40, 48, 56, 1);
 }
 .footer-logo-section {
@@ -62,43 +61,43 @@
 	color: rgba(255, 255, 255, 1);
 	white-space: pre-wrap;
 	text-decoration: none;
-  cursor: pointer;
+	cursor: pointer;
 }
 .footer-details-container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 3.5625rem;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	gap: 0.5rem;
+	align-items: flex-start;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 3.5625rem;
 }
 .footer-info-card-left-column {
-  flex: 0 0 auto;
+	flex: 0 0 auto;
 }
 .footer-info-card-right-column {
-  flex: 0 0 auto;
+	flex: 0 0 auto;
 }
 .contact-info-block {
-  font: 400 16px/22.5px Inter, sans-serif;
-  color: rgba(255, 255, 255, 1);
-  text-align: left;
-  white-space: pre-wrap;
+	font: 400 16px/22.5px Inter, sans-serif;
+	color: rgba(255, 255, 255, 1);
+	text-align: left;
+	white-space: pre-wrap;
 }
 .primary-text-block {
-  font: 400 16px/22.5px Inter, sans-serif;
-  color: rgba(255, 255, 255, 1);
-  text-align: left;
+	font: 400 16px/22.5px Inter, sans-serif;
+	color: rgba(255, 255, 255, 1);
+	text-align: left;
 }
 .address-details {
-  font: 400 16px/22.5px Inter, sans-serif;
-  text-align: left;
+	font: 400 16px/22.5px Inter, sans-serif;
+	text-align: left;
 }
 .contact-info-style {
-  margin-top: 1.53125rem;
-  font: 400 16px/22.5px Inter, sans-serif;
-  color: rgba(255, 255, 255, 1);
-  text-align: left;
-  white-space: pre-wrap;
+	margin-top: 1.53125rem;
+	font: 400 16px/22.5px Inter, sans-serif;
+	color: rgba(255, 255, 255, 1);
+	text-align: left;
+	white-space: pre-wrap;
 }

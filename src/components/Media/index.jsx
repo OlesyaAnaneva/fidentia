@@ -9,7 +9,11 @@ import postsData from '../../../admin/server/data/posts.json';
 import videoData from '../../../admin/server/data/videos.json';
 
 const Media = () => {
-	const [visibleRows, setVisibleRows] = useState(4);
+	const initialVisibleRows = Math.min(
+		Math.ceil((videoData.length + postsData.length) / 4),
+		3
+	);
+	const [visibleRows, setVisibleRows] = useState(initialVisibleRows);
 
 	const handleLoadMore = () => {
 		setVisibleRows((prev) => prev + 4);
@@ -17,121 +21,52 @@ const Media = () => {
 
 	const renderComponents = () => {
 		const components = [];
-		if (videoData.length === 0 && postsData.length === 0) {
-			return null;
-		}
-		if (videoData.length >= 1 && postsData.length === 0) {
-			const videosToRender = videoData.slice(0, visibleRows);
-			videosToRender.forEach((video, index) => {
-				components.push(
-					<div className='media-row' key={`video-${index}`}>
-						<Video data={video} />
-					</div>
-				);
-			});
-		} else if (videoData.length >= 1 || postsData.length >= 0) {
-			for (let i = 0; i < visibleRows; i++) {
-				switch ((i + 1) % 12) {
-					case 1:
-					case 4:
-					case 7:
-					case 10:
-						if (videoData[Math.floor(i / 3)]) {
-							components.push(
-								<div className='media-row'>
-									<Video
-										key={`video-${i}`}
-										data={videoData[Math.floor(i / 3)]}
-									/>
-								</div>
-							);
-							if (postsData[i]) {
-								components.push(
-									<div className='media-row'>
-										<Post_mini key={`post-mini-${i}`} data={postsData[i]} />
-									</div>
-								);
-							} else {
-								components.push(
-									<div className='media-row'>
-										<Post_long key={`post-long-${i}`} data={postsData[i]} />
-									</div>
-								);
-							}
-						} else {
-							components.push(
-								<div className='media-row'>
-									<Post_long key={`post-long-${i}`} data={postsData[i]} />
-								</div>
-							);
-						}
-						break;
-					case 2:
-					case 3:
-					case 5:
-					case 6:
-					case 8:
-					case 9:
-						if (postsData[i]) {
-							components.push(
-								<div className='media-row'>
-									<Post_long key={`post-long-${i}`} data={postsData[i]} />
-								</div>
-							);
-						}
-						if (postsData[i + 1]) {
-							components.push(
-								<div className='media-row'>
-									<Post_mini key={`post-mini-${i}`} data={postsData[i + 1]} />
-								</div>
-							);
-						}
-						if (postsData[i + 2]) {
-							components.push(
-								<div className='media-row'>
-									<Post_mini key={`post-mini-${i}`} data={postsData[i + 2]} />
-								</div>
-							);
-						}
-						if (postsData[i + 3]) {
-							components.push(
-								<div className='media-row'>
-									<Post_mini key={`post-mini-${i}`} data={postsData[i + 3]} />
-								</div>
-							);
-						}
-						i += 3;
-						break;
-					case 11:
-						if (postsData[i]) {
-							components.push(
-								<div className='media-row'>
-									<Post_mini key={`post-mini-${i}`} data={postsData[i]} />
-								</div>
-							);
-						}
-						break;
-					case 0:
-						if (postsData[i]) {
-							components.push(
-								<div className='media-row'>
-									<Post_mini key={`post-mini-${i}`} data={postsData[i]} />
-								</div>
-							);
-						}
-						if (videoData[Math.floor(i / 3)]) {
-							components.push(
-								<div className='media-row'>
-									<Video
-										key={`video-${i}`}
-										data={videoData[Math.floor(i / 3)]}
-									/>
-								</div>
-							);
-						}
-						break;
-					default:
-						break;
+		let videoIndex = 0;
+		let postIndex = 0;
+
+		for (let i = 0; i < visibleRows; i++) {
+			if (i % 4 === 0) {
+				if (videoIndex < videoData.length && postIndex < postsData.length) {
+					components.push(
+						<div className='media-row' key={`video-post-mini-${i}`}>
+							<Video data={videoData[videoIndex]} />
+							<Post_mini data={postsData[postIndex]} />
+						</div>
+					);
+					videoIndex++;
+					postIndex++;
+				} else if (videoIndex < videoData.length) {
+					components.push(
+						<div className='media-row' key={`video-${i}`}>
+							<Video data={videoData[videoIndex]} />
+						</div>
+					);
+					videoIndex++;
+				} else {
+					const rowItems = [];
+					for (let j = 0; j < 3 && postIndex < postsData.length; j++) {
+						rowItems.push(
+							<Post_mini
+								data={postsData[postIndex]}
+								key={`post-mini-${postIndex}`}
+							/>
+						);
+						postIndex++;
+					}
+					components.push(
+						<div className='media-row' key={`post-mini-row-${i}`}>
+							{rowItems}
+						</div>
+					);
+				}
+			} else if ((i - 1) % 4 === 0 || (i - 2) % 4 === 0) {
+				if (postIndex < postsData.length) {
+					components.push(
+						<div className='media-row' key={`post-long-${postIndex}`}>
+							<Post_long data={postsData[postIndex]} />
+						</div>
+					);
+					postIndex++;
 				}
 			}
 		}
@@ -139,17 +74,23 @@ const Media = () => {
 		return components;
 	};
 
-	const hasMoreVideos = videoData.length > visibleRows;
-	const hasMorePosts = postsData.length > 0 && postsData.length - 1 !== visibleRows;
+	const hasMoreVideos = videoData.length > Math.floor(visibleRows / 4);
+	const hasMorePosts = postsData.length > visibleRows * 3;
+
+	const showLoadMoreButton = hasMoreVideos || hasMorePosts;
+
+	const hasMedia = videoData.length > 0 || postsData.length > 0;
 
 	return (
-		<div className='media-common-container'>
-			<p className='media-common-heading'>Что нового</p>
-			<div className='media-container'>{renderComponents()}</div>
-			{(hasMoreVideos || hasMorePosts) && (
-				<LoadMoreButton onClick={handleLoadMore} />
+		<>
+			{hasMedia && (
+				<div className='media-common-container'>
+					<p className='media-common-heading'>Что нового</p>
+					<div className='media-container'>{renderComponents()}</div>
+					{showLoadMoreButton && <LoadMoreButton onClick={handleLoadMore} />}
+				</div>
 			)}
-		</div>
+		</>
 	);
 };
 

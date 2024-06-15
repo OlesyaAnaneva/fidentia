@@ -1,5 +1,5 @@
 {
-	"name": "project",
+	"name": "admin-project",
 	"version": "1.0.0",
 	"description": "Проект с использованием Node.js и React для интерфейса администратора",
 	"main": "server/server.js",
@@ -9,8 +9,6 @@
 		"server": "cd server && npm start",
 		"dev": "concurrently \"npm run client\" \"npm run server\""
 	},
-	"author": "Ваше имя",
-	"license": "MIT",
 	"dependencies": {
 		"axios": "^1.6.8",
 		"concurrently": "^6.2.1",

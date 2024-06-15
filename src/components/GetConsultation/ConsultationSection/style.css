@@ -4,9 +4,8 @@
 	flex-direction: row;
 	align-items: stretch;
 	justify-content: flex-start;
-	min-width: 1440px;
-	padding: 48px 48px 48px 118px;
-	background: rgba(243, 244, 245, 1);
+	width: 100%;
+	padding: 2rem 5rem;
 }
 .consultation-section {
 	box-sizing: border-box;
@@ -43,17 +42,17 @@
 	padding-left: 15px;
 }
 .consultation-center-aligned-contact-info-container {
-  display: flex;
-  flex: 0 0 auto;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
 }
 .consultation-submit-button-style {
 	box-sizing: border-box;
 	display: block;
-	flex: 0 0 auto;
-	min-width: 440px;
+	width: 100%;
+	max-width: none;
 	height: 51px;
 	font: 400 16px Inter, sans-serif;
 	color: rgba(255, 255, 255, 1);
@@ -62,26 +61,73 @@
 	border: none;
 	border-radius: 8px;
 }
-
 .consultation-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-
 .consultation-modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 80%;
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 12px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	width: 80%;
+	text-align: center;
+}
+.consultation-modal-text {
+	margin-bottom: 20px;
+	font: 500 18px Inter, sans-serif;
+	color: rgba(40, 48, 56, 1);
 }
 .consultation-modal-overlay.hidden {
-  display: none;
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.consultation-section {
+		width: 100%;
+		padding-bottom: 0;
+	}
+	.consultation-common-container {
+		flex-direction: column;
+		padding: 20px;
+	}
+	.consultation-submit-button-style {
+		width: 100%;
+		max-width: none;
+	}
+	.consultation-form-container {
+		padding-left: 0;
+		padding-top: 30px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+	.consultation-section {
+		width: 100%;
+		padding-bottom: 0;
+	}
+	.consultation-common-container {
+		flex-direction: column;
+		padding: 20px;
+	}
+	.consultation-submit-button-style {
+		width: 100%;
+		max-width: none;
+	}
+	.consultation-form-container {
+		padding-left: 0;
+		padding-top: 30px;
+		width: 100%;
+		box-sizing: border-box;
+	}
 }

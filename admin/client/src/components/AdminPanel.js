@@ -153,6 +153,55 @@ const AdminPanel = ({ type }) => {
 			<h2 className='admin-container-title'>
 				{type === 'posts' ? 'Посты' : 'Видео'}
 			</h2>
+			<h3>Добавить {type === 'posts' ? 'пост' : 'видео'}</h3>
+			{type === 'posts' && (
+				<input
+					type='text'
+					value={title}
+					onChange={(e) => setTitle(e.target.value)}
+					placeholder='Заголовок'
+					className='admin-content-add-container-title'
+				/>
+			)}
+			{type === 'posts' && (
+				<textarea
+					value={description}
+					onChange={(e) => setDescription(e.target.value)}
+					placeholder='Описание'
+					className='admin-content-add-container-textarea'
+				/>
+			)}
+			{type === 'posts' && (
+				<input
+					type='file'
+					onChange={(e) => setImage(e.target.files[0])}
+					accept='image/*'
+					className='admin-content-add-container-input'
+				/>
+			)}
+			{type === 'posts' && (
+				<input
+					type='date'
+					value={timestamp}
+					onChange={(e) => setTimestamp(e.target.value)}
+					placeholder='Дата публикации'
+					className='admin-content-edit-container-input'
+				/>
+			)}
+			{type === 'videos' && (
+				<input
+					type='text'
+					value={videoLink}
+					onChange={(e) => setVideoLink(e.target.value)}
+					placeholder='Ссылка на видео'
+					className='admin-content-add-container-input2'
+				/>
+			)}
+			<button
+				onClick={handleAddItemClick}
+				className='admin-content-add-container-add-button'>
+				Добавить {type === 'posts' ? 'пост' : 'видео'}
+			</button>
 			<ul className='admin-content-ul'>
 				{items.map((item) => (
 					<li className='admin-content-li' key={item.id}>
@@ -162,13 +211,15 @@ const AdminPanel = ({ type }) => {
 								<p className='admin-content-p'>{item.title}</p>
 							</div>
 						)}
-						<div className='admin-content-description'>
-							<p className='admin-content-p1'>Описание:</p>
-							<p className='admin-content-p'>{item.description}</p>
-						</div>
+						{type === 'posts' && (
+							<div className='admin-content-description'>
+								<p className='admin-content-p1'>Описание:</p>
+								<p className='admin-content-p'>{item.description}</p>
+							</div>
+						)}
 						<div className='admin-content-link'>
 							<p className='admin-content-p1'>
-								Ссылка на {type === 'posts' ? 'пост' : 'видео'}
+								Ссылка на {type === 'posts' ? 'изображение к посту' : 'видео'}
 							</p>
 							<p className='admin-content-p'>
 								{type === 'posts' ? (
@@ -178,12 +229,12 @@ const AdminPanel = ({ type }) => {
 								)}
 							</p>
 						</div>
-						<div className='admin-content-timestamp'>
-							<p className='admin-content-p1'>
-								Дата публикации {type === 'posts' ? 'поста' : 'видео'}
-							</p>
-							<p className='admin-content-p'>{item.timestamp}</p>
-						</div>
+						{type === 'posts' && (
+							<div className='admin-content-timestamp'>
+								<p className='admin-content-p1'>Дата публикации поста</p>
+								<p className='admin-content-p'>{item.timestamp}</p>
+							</div>
+						)}
 						<button
 							className='admin-content-edit-button'
 							onClick={() => selectItem(item.id)}>
@@ -208,19 +259,34 @@ const AdminPanel = ({ type }) => {
 										className='admin-content-edit-container-input'
 									/>
 								)}
-								<textarea
-									value={
-										editDescription === '' ? item.description : editDescription
-									}
-									onChange={(e) => setEditDescription(e.target.value)}
-									placeholder='Описание'
-									className='admin-content-edit-container-textarea'></textarea>
+								{type === 'posts' && (
+									<textarea
+										value={
+											editDescription === ''
+												? item.description
+												: editDescription
+										}
+										onChange={(e) => setEditDescription(e.target.value)}
+										placeholder='Описание'
+										className='admin-content-edit-container-textarea'></textarea>
+								)}
 								{type === 'posts' && (
 									<input
 										type='file'
 										onChange={(e) => setImage(e.target.files[0])}
 										accept='image/*'
 										className='admin-content-edit-container-input2'
+									/>
+								)}
+								{type === 'posts' && (
+									<input
+										type='date'
+										value={
+											editTimestamp === '' ? item.timestamp : editTimestamp
+										}
+										onChange={(e) => setEditTimestamp(e.target.value)}
+										placeholder='Дата публикации'
+										className='admin-content-edit-container-input'
 									/>
 								)}
 								{type === 'videos' && (
@@ -232,13 +298,6 @@ const AdminPanel = ({ type }) => {
 										className='admin-content-add-container-input2'
 									/>
 								)}
-								<input
-									type='date'
-									value={editTimestamp === '' ? item.timestamp : editTimestamp}
-									onChange={(e) => setEditTimestamp(e.target.value)}
-									placeholder='Дата публикации'
-									className='admin-content-edit-container-input'
-								/>
 								<button
 									className='admin-content-edit-container-button-save'
 									onClick={() => updateItem(item.id)}>
@@ -254,50 +313,6 @@ const AdminPanel = ({ type }) => {
 					</li>
 				))}
 			</ul>
-			<h3>Добавить {type === 'posts' ? 'пост' : 'видео'}</h3>
-			{type === 'posts' && (
-				<input
-					type='text'
-					value={title}
-					onChange={(e) => setTitle(e.target.value)}
-					placeholder='Заголовок'
-					className='admin-content-add-container-title'
-				/>
-			)}
-			<textarea
-				value={description}
-				onChange={(e) => setDescription(e.target.value)}
-				placeholder='Описание'
-				className='admin-content-add-container-textarea'></textarea>
-			{type === 'posts' && (
-				<input
-					type='file'
-					onChange={(e) => setImage(e.target.files[0])}
-					accept='image/*'
-					className='admin-content-add-container-input'
-				/>
-			)}
-			{type === 'videos' && (
-				<input
-					type='text'
-					value={videoLink}
-					onChange={(e) => setVideoLink(e.target.value)}
-					placeholder='Ссылка на видео'
-					className='admin-content-add-container-input2'
-				/>
-			)}
-			<input
-				type='date'
-				value={timestamp}
-				onChange={(e) => setTimestamp(e.target.value)}
-				placeholder='Дата публикации'
-				className='admin-content-edit-container-input'
-			/>
-			<button
-				onClick={handleAddItemClick}
-				className='admin-content-add-container-add-button'>
-				Добавить {type === 'posts' ? 'пост' : 'видео'}
-			</button>
 		</div>
 	);
 };

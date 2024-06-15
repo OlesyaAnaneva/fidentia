@@ -33,10 +33,10 @@ function AboutBlock() {
 					<img
 						src='/assets/img_5_503_5c5a73.jpeg'
 						alt='Image'
-						className='mystical-avatar'
+						className='circular-image-avatar'
 					/>
 				</div>
-				<p className='expert-count-text-style'>{"Уже\n230 экспертов"}</p>
+				<p className='expert-count-text-style'>{'Уже\n230 экспертов'}</p>
 			</div>
 		</div>
 	);

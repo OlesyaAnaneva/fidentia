@@ -16,10 +16,6 @@ function NavSections({
 				<p className='navigation-link' onClick={onMediaClick}>
 					Новости
 				</p>
-				<p className='navigation-link' onClick={onMediaClick}>
-					Медиа
-				</p>
-				<p className='navigation-link'>Документы</p>
 				<p className='navigation-link' onClick={onContactsClick}>
 					Контакты
 				</p>
